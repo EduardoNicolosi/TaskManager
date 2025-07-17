@@ -14,3 +14,10 @@ class Task(TaskBase):
 
     class Config:
         orm_mode = True
+
+class TaskUpdate(BaseModel):
+    title: Optional[str] = None
+    description: Optional[str] = None
+    completed: Optional[bool] = None
+
+    

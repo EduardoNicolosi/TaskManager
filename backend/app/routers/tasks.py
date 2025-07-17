@@ -30,3 +30,10 @@ def read_task(task_id: int, db: Session = Depends(get_db)):
 def create_task(task: schemas.TaskCreate, db: Session = Depends(get_db)):
     return crud.create_task(db, task)
 
+@router.put("/{task_id}", response_model=schemas.Task)
+def update_task(task_id: int, task: schemas.TaskUpdate, db: Session = Depends(get_db)):
+    return crud.update_task(db, task_id, task)
+
+@router.delete("/{task_id}", response_model=schemas.Task)
+def delete_task(task_id: int, db: Session = Depends(get_db)):
+    return crud.delete_task(db, task_id)

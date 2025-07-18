@@ -68,8 +68,8 @@ body, #root, .App {
 
 .task-actions {
   display: flex;
-  margin-left: 450px;
-  gap: 20px;
+  margin-left: 550px;
+  gap: 10px;
 }
 
 .edit-btn, .delete-btn {
@@ -89,4 +89,26 @@ body, #root, .App {
 .delete-btn:hover {
   background: #ffeaea;
   color: #e53935;
+}
+
+.container {
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40px;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.to-do-list,
+.doing-list,
+.done-list {
+  flex: 1;
+  border-radius: 10px;
+  font-family: sans-serif;
+  border: 3px dotted white;
+}
+
+.container h1 {
+  text-align: center;
 }

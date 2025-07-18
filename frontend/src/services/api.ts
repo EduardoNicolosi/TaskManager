@@ -50,3 +50,17 @@ export async function deleteTask(id: number): Promise<void> {
     throw new Error('Task deletion failed');
   }
 }
+
+export async function updateTask(id: number, task: TaskCreate): Promise<Task> {
+  const response = await fetch(`${API_BASE_URL}/tasks/${id}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(task),
+  });
+  if (!response.ok) {
+    throw new Error('Task update failed');
+  }
+  return response.json();
+}

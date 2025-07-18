@@ -41,3 +41,12 @@ export async function getTask(id: number): Promise<Task> {
   }
   return response.json();
 }
+
+export async function deleteTask(id: number): Promise<void> {
+  const response = await fetch(`${API_BASE_URL}/tasks/${id}`, {
+    method: 'DELETE',
+  });
+  if (!response.ok) {
+    throw new Error('Task deletion failed');
+  }
+}
